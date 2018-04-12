@@ -11,7 +11,7 @@ export const mockTypes = [
   }
 ];
 
-export const mockPokemons = [
+export const pokemons = [
   {
     "name":"pidgey",
     "id":"16",

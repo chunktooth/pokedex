@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Container = ({ types }) => {
+  console.log(types);
+  
   const pokemonTypes = types.map((type, index) => {
     console.log(type)
 

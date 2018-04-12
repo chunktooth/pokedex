@@ -1,5 +1,5 @@
 import * as actions from './index';
-import { mockPokemons } from '../data/mockData';
+import { pokemons } from '../data/mockData';
 
 describe('actions', () => {
 
@@ -27,9 +27,9 @@ describe('actions', () => {
     it('should return a type of LOAD_POKEMONS and payload', () => {
       const expected = {
         type: 'LOAD_POKEMONS',
-        mockPokemons
+        pokemons
       };
-      expect(actions.loadPokemons(mockPokemons)).toEqual(expected);
+      expect(actions.loadPokemons(pokemons)).toEqual(expected);
     });
   });
 

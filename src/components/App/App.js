@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { getTypes } from '../../data/getTypes';
 import { catchPokemons } from '../../data/catchPokemons';
-import { loadTypes } from '../../actions/index';
+import { loadTypes, 
+  loadPokemons } from '../../actions/index';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Container } from '../../containers/Container/Container';
@@ -20,12 +21,17 @@ async componentDidMount() {
   const pokemons = await catchPokemons();
   this.props.loadTypes(pokeTypes);
   this.props.loadPokemons(pokemons);
+  this.setState({ loading: false })
 }
 
   render() {
     return (
       <div className='App'>
         <h1 className='header'> POKéDEX </h1>
+         {
+          !this.state.loading &&
+          <p>loading...</p>
+         }
          <Container types={this.props.types} />
       </div>
     );
@@ -34,15 +40,18 @@ async componentDidMount() {
 
 App.propTypes = {
   types: PropTypes.array,
-  loadTypes: PropTypes.func
+  loadTypes: PropTypes.func,
+  loadPokemons: PropTypes.func
 };
 
 const mapStateToProps = (state) => ({
-  types: state.types
+  types: state.types,
+  pokemons: state.pokemons
 });
 
 const mapDispatchToProps = (dispatch) => ({ 
-  loadTypes: (types) => (dispatch(loadTypes(types)))
+  loadTypes: (types) => (dispatch(loadTypes(types))),
+  loadPokemons: (pokemons) => (dispatch(loadPokemons(pokemons)))
 });
 
 
