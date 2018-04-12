@@ -25,6 +25,7 @@ async componentDidMount() {
     setTimeout(() => {
       this.setState({ loading: false });
     }, 1000);
+    
   this.props.loadTypes(pokeTypes);
   this.props.loadPokemons(pokemons);
 }
@@ -32,19 +33,19 @@ async componentDidMount() {
   render() {
     return (
       <div>  
-          {
-            this.state.loading &&
-            <img src={ loading } alt="loading..." className='loading-screen '/>
-          }
-          {
-            !this.state.loading &&
-            <div>
-              <div className='App'>
-                <h1 className='header'> POKéDEX </h1>
-              </div>
-              <Container types={this.props.types} />
+        {
+          this.state.loading &&
+          <img src={ loading } alt="loading..." className='loading-screen '/>
+        }
+        {
+          !this.state.loading &&
+          <div>
+            <div className='App'>
+              <h1 className='header'> POKéDEX </h1>
             </div>
-          }
+            <Container types={this.props.types} />
+          </div>
+        }
       </div>
     );
   }

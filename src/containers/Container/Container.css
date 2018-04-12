@@ -1,0 +1,13 @@
+.all-types {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.type-btns {
+  width: 30%;
+  margin: 10px;
+  padding: 5px;
+  background: transparent;
+}
