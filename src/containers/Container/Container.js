@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from '../../components/Card/Card';
 import PropTypes from 'prop-types';
 
 export const Container = ({ types }) => {
