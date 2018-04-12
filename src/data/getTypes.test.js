@@ -13,7 +13,7 @@ describe('get types', () => {
       method: 'GET',
       body: JSON.stringify({ type }),
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }
     }];
     

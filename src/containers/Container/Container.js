@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Card } from '../../components/Card/Card';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 export const Container = ({ types }) => {
   const pokemonTypes = types.map((type, index) => {
-    return (
-      <Card {...type} index={type.id} />
-    )
-  });
-}
+    console.log(type)
 
-  render() {
     return (
-      <div>
-        {pokemonTypes}
-      </div>
+      <button index={type.id}>{type.name}</button>
     );
-  }
+  });
+
+  return (
+    <div>
+      {pokemonTypes}
+    </div>
+  )
 }
 
-Container.
+Container.propTypes = {
+  types: PropTypes.array
+}
