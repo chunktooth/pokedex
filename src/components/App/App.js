@@ -7,6 +7,7 @@ import { loadTypes,
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Container } from '../../containers/Container/Container';
+import loading from '../../loading.gif';
 
 class App extends Component {
   constructor() {
@@ -19,20 +20,27 @@ class App extends Component {
 async componentDidMount() {
   const pokeTypes = await getTypes();
   const pokemons = await catchPokemons();
+  console.log(pokemons);
+
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 1000);
   this.props.loadTypes(pokeTypes);
   this.props.loadPokemons(pokemons);
-  this.setState({ loading: false })
 }
 
   render() {
     return (
       <div className='App'>
         <h1 className='header'> POKéDEX </h1>
-         {
+        {
           !this.state.loading &&
-          <p>loading...</p>
-         }
-         <Container types={this.props.types} />
+          <Container types={this.props.types} />
+        }
+        {
+          this.state.loading &&
+          <img src={ loading } alt="loading..." />
+        }       
       </div>
     );
   }
