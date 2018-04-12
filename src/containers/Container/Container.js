@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadTypes } from '../../actions';
-class Container extends Component {
+
+export const Container = ({ types }) => {
+  const pokemonTypes = types.map((type, index) => {
+    return (
+      <Card {...type} index={type.id} />
+    )
+  });
+}
 
   render() {
     return (
       <div>
-        <button onClick={()=> {
-          this.props.fakeAction()
-          alert('FAKE')
-        }}> FAKE </button>
+        {pokemonTypes}
       </div>
     );
   }
 }
 
-Container.propTypes = {
-  fakeAction: func.isRequired
-};
-
-const mapStateToProps = (state) => ({
-  types: state.types
-});
-
-const mapDispatchToProps = (dispatch) => ({ 
-  loadTypes: () => dispatch(loadTypes());
-});
-export default connect(mapStateToProps, mapDispatchToProps)(Container);
+Container.

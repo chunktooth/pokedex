@@ -15,8 +15,11 @@ describe('App', () => {
   });
 
   it('should call getTypes and return pokeTypes', () => {
-    
-    expects()
+    const mockTypes = { types: 
+      {'id': '1', 'name': 'pikachu'}
+  };
+    const mappedTypes = mapStateToProps(mockTypes);
+    expect(mappedTypes.types).toEqual(mockTypes.types);
   });
 
 });
