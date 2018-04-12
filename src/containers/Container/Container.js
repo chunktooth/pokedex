@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes, { shape, func, string } from 'prop-types';
 import { connect } from 'react-redux';
-import { fakeAction } from '../../actions';
-class FakeContainer extends Component {
+import { loadTypes } from '../../actions';
+class Container extends Component {
 
   render() {
     return (
@@ -16,13 +16,15 @@ class FakeContainer extends Component {
   }
 }
 
-FakeContainer.propTypes = {
-  fake: shape({ fake: string }),
+Container.propTypes = {
   fakeAction: func.isRequired
 };
 
-const mapStateToProps = ({ fake }) => ({ fake });
-const mapDispatchToProps = dispatch => ({ fakeAction:
-  () => dispatch(fakeAction())
+const mapStateToProps = (state) => ({
+  types: state.types
 });
-export default connect(mapStateToProps, mapDispatchToProps)(FakeContainer);
+
+const mapDispatchToProps = (dispatch) => ({ 
+  loadTypes: () => dispatch(loadTypes());
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Container);

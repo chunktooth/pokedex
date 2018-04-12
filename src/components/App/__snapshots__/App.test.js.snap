@@ -23,7 +23,7 @@ ShallowWrapper {
         >
            POKéDEX 
         </h1>,
-        <Connect(FakeContainer) />,
+        <UNDEFINED />,
       ],
       "className": "App",
     },
@@ -44,11 +44,11 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {},
         "ref": null,
         "rendered": null,
-        "type": [Function],
+        "type": Object {},
       },
     ],
     "type": "div",
@@ -65,7 +65,7 @@ ShallowWrapper {
           >
              POKéDEX 
           </h1>,
-          <Connect(FakeContainer) />,
+          <UNDEFINED />,
         ],
         "className": "App",
       },
@@ -86,11 +86,11 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {},
           "ref": null,
           "rendered": null,
-          "type": [Function],
+          "type": Object {},
         },
       ],
       "type": "div",

@@ -3,6 +3,7 @@ import * as actions from './index';
 describe('actions', () => {
 
   describe('load types', () => {
+
     it('should return a type of LOAD_TYPES and payload', () => {
      const types = [
       { "id":"1",
@@ -20,7 +21,7 @@ describe('actions', () => {
 
       expect(actions.loadTypes(types)).toEqual(expected);
     });
-
+    
   });
 
 })

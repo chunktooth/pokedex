@@ -16,6 +16,7 @@ describe('get types', () => {
         'Content-Type': 'application/json',
       }
     }];
+    
     expect(window.fetch).toEqual(...expected);
 
   });

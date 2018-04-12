@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getTypes } from '../../data/getTypes.js'
-import FakeContainer from '../../containers/FakeContainer/'
+import Container from '../../containers/Container/'
 
 class App extends Component {
 
@@ -16,7 +16,7 @@ async componentDidMount() {
     return (
       <div className='App'>
         <h1 className='header'> POKéDEX </h1>
-        <FakeContainer />
+        <Container />
       </div>
     );
   }
