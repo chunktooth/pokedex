@@ -1,12 +1,6 @@
-export const getTypes = async (types) => {
+export const getTypes = async () => {
   try {
-    const response = await fetch('localhost:3001/types', {
-      method: 'GET',
-      body: JSON.stringify({ types }),
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    });
+    const response = await fetch('http://localhost:3001/types');
     const pokeTypes = await response.json();
     console.log(pokeTypes);
 
