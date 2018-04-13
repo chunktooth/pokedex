@@ -3,7 +3,7 @@ import { mockTypes } from './mockData';
 
 describe('get types', () => {
 
-  it('should get all Pokemon types', () => {
+  it('should get all Pokemon types', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ 
         ok: true,
         json: () => Promise.resolve(mockTypes) 

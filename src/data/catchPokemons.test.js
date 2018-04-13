@@ -1,7 +1,7 @@
 import { catchPokemons } from './catchPokemons';
 import { pokemons } from './mockData';
 
-describe('catch pokemons', () => {
+describe('catch pokemons', async () => {
 
   it('should get all Pokemons', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ 
